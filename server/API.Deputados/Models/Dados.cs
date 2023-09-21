@@ -4,7 +4,7 @@ namespace API.Deputados.Models
 {
     public class Dados
     {
-        //[XmlElement]
+        [XmlElement]
         public List<Deputado> dados { get; set; }
     }
 }

@@ -4,6 +4,7 @@ namespace API.Deputados.Service
 {
     public interface IDeputados
     {
-        Task<List<Deputado>> GetAllDeputados();
+        //Task<List<Deputado>> GetAllDeputados();
+        void GetAllDeputados();
     }
 }

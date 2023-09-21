@@ -18,9 +18,9 @@ namespace API.Deputados.Controllers
         [HttpGet("GetAllDeputados")]
         public async Task<IActionResult> GetAll()
         {
-            var deputados = await _services.GetAllDeputados();
-
-            return Ok(deputados);
+            //var deputados = await _services.GetAllDeputados();
+            _services.GetAllDeputados();
+            return Ok();
         }
     }
 }
