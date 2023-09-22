@@ -2,9 +2,10 @@
 
 namespace API.Deputados.Models
 {
+    [XmlRoot(ElementName = "dados")]
     public class Dados
     {
-        [XmlElement]
-        public List<Deputado> dados { get; set; }
+        [XmlElement(ElementName = "deputado_")]
+        public List<Deputado> Deputados { get; set; }
     }
 }

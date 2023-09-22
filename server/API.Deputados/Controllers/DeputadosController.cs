@@ -15,12 +15,19 @@ namespace API.Deputados.Controllers
             _services = services;
         }
 
-        [HttpGet("GetAllDeputados")]
-        public async Task<IActionResult> GetAll()
-        {
-            //var deputados = await _services.GetAllDeputados();
-            _services.GetAllDeputados();
-            return Ok();
+        [HttpGet("GetAllDeputados/{pagina:int}/{itens:int}")]
+        public async Task<IActionResult> GetAll(int pagina, int itens)
+        {           
+            try
+            {
+                var deputados = _services.GetAllDeputados(pagina, itens);
+                return Ok(deputados.Result.dados);
+
+            } catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
         }
     }
 }
